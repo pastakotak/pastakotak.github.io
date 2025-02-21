@@ -14,26 +14,117 @@
         <p>Delicious Pasta in a Box, Just for You!</p>
         <a href="https://www.instagram.com/pastakotak/" target="_blank">Follow Us on Instagram</a>
     </header>
+    
     <section id="menu">
         <h2 class="scroll-reveal visible">Menu</h2>
+    
+        <!-- Aglio Olio -->
         <div class="menu-item">
-            <img src="carbonara.jpg" alt="Carbonara">
-            <p>🍝 Carbonara - 7 MYR</p>
+            <h3>🍝 Aglio Olio</h3>
+            <p>Flavourful combination of garlic, olive oil, chili flakes, and fresh parsley.</p>
+            <button onclick="showOptions('aglio-olio-options')">View Options</button>
+            <div id="aglio-olio-options" class="options-container">
+                <div class="option-item">
+                    <img src="aglio-olio-chicken.jpg" alt="Roasted Chicken Aglio Olio">
+                    <p>🍗 Roasted Chicken - 12 MYR</p>
+                </div>
+                <div class="option-item">
+                    <img src="alfredo-beef.jpg" alt="Beef Strips Aglio Olio">
+                    <p>🥩 Beef Strips - 13 MYR</p>
+                </div>
+                <div class="option-item">
+                    <img src="aglio-olio-prawn.jpg" alt="Prawn Aglio Olio">
+                    <p>🍤 Prawn - 15 MYR</p>
+                </div>
+    
+                <!-- Add-ons -->
+                <div class="addons">
+                    <h4>Add-ons:</h4>
+                    <p>🥚 Egg Yolk - 2 MYR</p>
+                    <p>🍗🥩🍤 Chicken/Prawn/Beef - 3 MYR</p>
+                    <p>🧀 Parmesan - 2 MYR</p>
+                </div>
+            </div>
         </div>
+    
+        <!-- Alfredo -->
         <div class="menu-item">
-            <img src="bolognese.jpg" alt="Bolognese">
-            <p>🍝 Bolognese - 8 MYR</p>
-        </div>
-        <div class="menu-item">
-            <img src="aglio-olio.jpg" alt="Aglio Olio">
-            <p>🍝 Aglio Olio - 9 MYR</p>
+            <h3>🍝 Alfredo</h3>
+            <p>Served with creamy white sauce, flavourful combination with garlic and fresh parsley.</p>
+            <button onclick="showOptions('alfredo-options')">View Options</button>
+            <div id="alfredo-options" class="options-container">
+                <div class="option-item">
+                    <img src="aglio-olio-chicken.jpg" alt="Roasted Chicken Alfredo">
+                    <p>🍗 Roasted Chicken - 13 MYR</p>
+                </div>
+                <div class="option-item">
+                    <img src="alfredo-beef.jpg" alt="Beef Strips Alfredo">
+                    <p>🥩 Beef Strips - 14 MYR</p>
+                </div>
+                <div class="option-item">
+                    <img src="alfredo-mushroom.jpg" alt="Shiitake Mushroom Alfredo">
+                    <p>🍄 Shiitake Mushroom - 10 MYR</p>
+                </div>
+                <div class="option-item">
+                    <img src="alfredo-prawn.jpg" alt="Prawn Alfredo">
+                    <p>🍤 Prawn - 15 MYR</p>
+                </div>
+    
+                <!-- Add-ons -->
+                <div class="addons">
+                    <h4>Add-ons:</h4>
+                    <p>🥚 Egg Yolk - 2 MYR</p>
+                    <p>🍗🥩🍤 Chicken/Prawn/Beef - 3 MYR</p>
+                    <p>🧀 Parmesan - 2 MYR</p>
+                </div>
+            </div>
         </div>
     </section>
     
+    
     <section id="order">
-        <h2>Order Now</h2>
         <p>Place your order via WhatsApp!</p>
-        <a href="https://wa.me/60139529463" target="_blank">Order on WhatsApp</a>
+        <button id="order-btn">Order Now</button>
     </section>
+
+    <!-- Order Modal -->
+<div id="order-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Your Order</h2>
+        <div id="menu-items">
+            <!-- Menu items will be dynamically inserted here -->
+        </div>
+        <h3>Total: <span id="total-price">0</span> MYR</h3>
+        <h3>Order Summary:</h3>
+        <ul id="order-summary">
+            <!-- Order summary will be dynamically updated here -->
+        </ul>
+        <button id="send-whatsapp">Send Order</button>
+    </div>
+</div>
+
+    <audio id="background-music" autoplay loop>
+        <source src="mia.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+<script>
+    // JavaScript for Background Music
+    const audio = document.getElementById("background-music");
+
+// Set medium volume (0.5 = 50%)
+audio.volume = 0.1;
+
+// Try to play the audio when the page loads
+audio.play().catch(() => {
+    console.log("Autoplay blocked. Waiting for user interaction.");
+});
+
+// Play when user clicks anywhere (fix for autoplay issues)
+document.body.addEventListener("click", function () {
+    audio.play();
+}, { once: true });
+</script>
+</script>
 </body>
 </html>
