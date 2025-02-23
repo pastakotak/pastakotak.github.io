@@ -1,3 +1,26 @@
+function checkTime() {
+    // Get current time in Malaysia (GMT+8)
+    let now = new Date();
+    let malaysiaTime = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Kuala_Lumpur" }));
+
+    let day = malaysiaTime.getDay(); // 0 = Sunday, 1 = Monday, ..., 5 = Friday, 6 = Saturday
+    let hour = malaysiaTime.getHours();
+
+    console.log("Malaysia Day:", day, "Hour:", hour); // Debugging to check values
+
+    // If it's Friday, close the website completely
+    if (day === 5) {
+        document.body.innerHTML = "<h2>🚧 We are closed on Fridays! 🚧</h2><p>See you on Saturday!</p>";
+        return;
+    }
+
+    // If it's past 6 PM on any day, close the website
+    if (hour >= 18) {
+        document.body.innerHTML = "<h2>🚧 Sorry, we are closed! 🚧</h2><p>Our operating hours are 12 PM - 6 PM.</p>";
+        return;
+    }
+}
+
 /* menu picture */
 function showOptions(id) {
     const optionsMenu = document.getElementById(id);
@@ -133,6 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
         menuContainer.innerHTML += `
             <p>Choose Order Type:</p>
             <label><input type="radio" name="order-type" value="Delivery" checked> Delivery (+${DELIVERY_FEE} MYR)</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <label><input type="radio" name="order-type" value="Pickup"> Pickup</label>
         `;
     
