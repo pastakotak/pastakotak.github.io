@@ -1,22 +1,19 @@
 function checkTime() {
-    // Get current time in Malaysia (GMT+8)
     let now = new Date();
     let malaysiaTime = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Kuala_Lumpur" }));
 
-    let day = malaysiaTime.getDay(); // 0 = Sunday, 1 = Monday, ..., 5 = Friday, 6 = Saturday
+    let day = malaysiaTime.getDay();
     let hour = malaysiaTime.getHours();
 
-    console.log("Malaysia Day:", day, "Hour:", hour); // Debugging to check values
+    console.log("Malaysia Day:", day, "Hour:", hour);
 
-    // If it's Friday, close the website completely
     if (day === 5) {
-        document.body.innerHTML = "<h2>🚧 We are closed on Fridays! 🚧</h2><p>See you on Saturday!</p>";
+        document.body.innerHTML = '<div class="message-container"><h3>🚧 We are closed on Fridays! 🚧</h3><p>See you on Saturday!</p></div>';
         return;
     }
 
-    // If it's past 6 PM on any day, close the website
     if (hour >= 18) {
-        document.body.innerHTML = "<h2>🚧 Sorry, we are closed! 🚧</h2><p>Our operating hours are 12 PM - 6 PM.</p>";
+        document.body.innerHTML = '<div class="message-container"><h3>🚧 Sorry, we are closed! 🚧</h3><p>Our operating hours are 12 PM - 6 PM.</p></div>';
         return;
     }
 }
@@ -64,7 +61,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const addOns = [
         { name: "Egg Yolk", price: 2 },
-        { name: "Chicken/Prawn/Beef", price: 3 },
+        { name: "Chicken", price: 3 },
+        { name: "Prawn", price: 3 },
+        { name: "Beef", price: 3 },
         { name: "Parmesan", price: 2 }
     ];
 
