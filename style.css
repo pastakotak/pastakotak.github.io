@@ -265,33 +265,64 @@ section {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50%;
-    max-width: 500px; /* Adjust for larger screens */
+    width: 90%; /* More flexible for different screen sizes */
+    max-width: 600px; /* Increased max width for desktops */
     max-height: 90vh;
     background: white;
-    padding: 0px;
+    padding: 20px;
     border-radius: 10px;
     overflow-y: auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-
+/* Modal Content */
 .modal-content {
     background-color: white;
-    padding: 40px;
+    padding: 20px;
     border-radius: 8px;
-    width: 50%;
-    max-width: 500px;
     text-align: center;
-    color:#1E4BA1;
-        display: block ruby;
-        width: 50%;
+    color: #1E4BA1;
 }
+
+/* Close Button */
 .close {
     float: right;
-    font-size: 20px;
+    font-size: 24px;
+    font-weight: bold;
     cursor: pointer;
+}
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+    .modal {
+        width: 95%; /* More width for mobile screens */
+        max-width: 400px; /* Keep it readable */
+        padding: 15px;
+    }
+
+    .modal-content {
+        padding: 15px;
+    }
+
+    .close {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal {
+        width: 98%;
+        max-width: 350px;
+    }
+
+    .modal-content {
+        padding: 10px;
+    }
+
+    .close {
+        font-size: 18px;
+    }
+}
 }
 .order-item {
     padding: 10px;
