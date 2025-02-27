@@ -62,8 +62,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const addOns = [
         { name: "Egg Yolk", price: 2 },
         { name: "Chicken", price: 3 },
-        { name: "Prawn", price: 3 },
-        { name: "Beef", price: 3 },
+        { name: "  Prawn", price: 3 },
+        { name: "   Beef", price: 3 },
         { name: "Parmesan", price: 2 }
     ];
 
