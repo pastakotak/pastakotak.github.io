@@ -12,7 +12,7 @@ function checkTime() {
         return;
     }
 
-    if (hour >= 19) {
+    if (hour >= 18) {
         document.body.innerHTML = '<div class="message-container"><h3>🚧 Sorry, we are closed! 🚧</h3><p>Our operating hours are 12 PM - 6 PM.</p></div>';
         return;
     }
