@@ -7,7 +7,7 @@ function checkTime() {
 
     console.log("Malaysia Day:", day, "Hour:", hour);
 
-    if (day === 5) {
+    if (day === 4) {
         document.body.innerHTML = '<div class="message-container"><h3>🚧 We are closed on Fridays! 🚧</h3><p>See you on Saturday!</p></div>';
         return;
     }
@@ -55,15 +55,17 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "Aglio Olio Prawn", price: 15 },
         { name: "Alfredo Roasted Chicken", price: 13 },
         { name: "Alfredo Beef Strips", price: 14 },
-        { name: "Alfredo Shiitake Mushroom", price: 10 },
         { name: "Alfredo Prawn", price: 15 }
     ];
 
     const addOns = [
-        { name: "Egg Yolk", price: 2 },
+        { name: "Raw Egg Yolk", price: 2 },
+        { name: "Shiitake Mushrooms", price: 2 },
         { name: "Chicken", price: 3 },
         { name: "  Prawn", price: 3 },
         { name: "   Beef", price: 3 },
+        { name: "   Pasta", price: 2 },
+        { name: "   Cream", price: 2 },
         { name: "Parmesan", price: 2 }
     ];
 
