@@ -59,13 +59,13 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     const addOns = [
-        { name: "Raw Egg Yolk", price: 2 },
-        { name: "Shiitake Mushrooms", price: 2 },
+        { name: "Egg Yolk", price: 2 },
+        { name: "Shiitake", price: 2 },
         { name: "Chicken", price: 3 },
-        { name: "  Prawn", price: 3 },
-        { name: "   Beef", price: 3 },
-        { name: "   Pasta", price: 2 },
-        { name: "   Cream", price: 2 },
+        { name: "Prawn", price: 3 },
+        { name: "Beef", price: 3 },
+        { name: "Pasta", price: 2 },
+        { name: "Cream", price: 2 },
         { name: "Parmesan", price: 2 }
     ];
 
