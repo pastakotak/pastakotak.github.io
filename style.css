@@ -112,6 +112,11 @@ section {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+.separator {
+    margin: 5px 0;
+    color: #999;
+}
+
 .menu-item:hover {
     transform: translateY(-5px);
     box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.15);
