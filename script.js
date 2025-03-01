@@ -7,7 +7,7 @@ function checkTime() {
 
     console.log("Malaysia Day:", day, "Hour:", hour);
 
-    if (day === 4) {
+    if (day === 5) {
         document.body.innerHTML = '<div class="message-container"><h3>🚧 We are closed on Fridays! 🚧</h3><p>See you on Saturday!</p></div>';
         return;
     }
