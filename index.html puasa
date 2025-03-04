@@ -10,7 +10,7 @@
 <body onload="checkTime()">
     <div class="container">
         <h1 class="fade-in">Welcome to Pasta Kotak 🍝</h1>
-        <p class="fade-in">We are open from <b>12 PM - 6 PM</b> (Closed on Fridays).</p>
+  <!--      <p class="fade-in">We are open from <b>12 PM - 6 PM</b> (Closed on Fridays).</p> -->
     </div>
     <header>
         <img src="header2.png" alt="Pasta Kotak Logo" class="logo">
