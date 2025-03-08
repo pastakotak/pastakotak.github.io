@@ -79,6 +79,14 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "Parmesan", price: 2 }
     ];
 
+    function showSeasonalMenu() {
+    var menu = document.getElementById("seasonal-items");
+    if (menu.style.display === "none") {
+        menu.style.display = "block";
+    } else {
+        menu.style.display = "none";
+    }
+}
     const DELIVERY_FEE = 3;
     let isDelivery = true; // Default to delivery
 
