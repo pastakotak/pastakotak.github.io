@@ -43,14 +43,6 @@ function showOptions(id) {
     }
 }
 
-// Ensure all options containers are hidden initially
-document.addEventListener("DOMContentLoaded", () => {
-    const optionContainers = document.querySelectorAll(".options-container");
-    optionContainers.forEach(container => {
-        container.style.display = "none";
-    });
-});
-
 function showSeasonalMenu() {
     var menu = document.getElementById("seasonal-items");
     if (menu.style.display === "none") {
@@ -59,6 +51,15 @@ function showSeasonalMenu() {
         menu.style.display = "none";
     }
 }
+
+// Ensure all options containers are hidden initially
+document.addEventListener("DOMContentLoaded", () => {
+    const optionContainers = document.querySelectorAll(".options-container");
+    optionContainers.forEach(container => {
+        container.style.display = "none";
+    });
+});
+
 
 /*menu picture */
 /* Toggle menu options */
