@@ -22,7 +22,7 @@ function checkTime() {
    This script checks the current hour and displays a 
    "Closed" message if it's outside operating hours (5 PM - 10 PM).
 */
-if (hour < 13 || hour >= 22) {  
+if (hour < 0 || hour >= 24) {  
     document.body.innerHTML = '<div class="message-container"><h3>🚧 Sorry, we are closed! 🚧</h3><p>Our operating hours are 5 PM - 10 PM during Ramadan.</p></div>';  
     return;  
 }
