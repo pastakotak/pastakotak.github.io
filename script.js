@@ -22,8 +22,8 @@ function checkTime() {
    This script checks the current hour and displays a 
    "Closed" message if it's outside operating hours (5 PM - 10 PM).
 */
-if (hour < 16 || hour >= 22) {  
-    document.body.innerHTML = '<div class="message-container"><h3>🚧 Sorry, we are closed! 🚧</h3><p>Our operating hours are 5 PM - 10 PM during Ramadan.</p></div>';  
+if (hour < 8 || hour >= 18) {  
+    document.body.innerHTML = '<div class="message-container"><h3>🚧 Sorry, we are closed! 🚧</h3><p>Our operating hours are 9 AM - 6 PM.</p></div>';  
     return;  
 }
 }
@@ -76,9 +76,10 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "Alfredo Roasted Chicken", price: 13 },
         { name: "Alfredo Beef Strips", price: 14 },
         { name: "Alfredo Prawn", price: 15 },
-        { name: "Beef Mac & Cheese", price: 15 }
     ];
 
+    /* { name: "Beef Mac & Cheese", price: 15 } */
+    
     const addOns = [
         { name: "Egg Yolk", price: 2 },
         { name: "Shiitake", price: 2 },
