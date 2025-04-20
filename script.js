@@ -76,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "Alfredo Roasted Chicken", price: 13 },
         { name: "Alfredo Beef Strips", price: 14 },
         { name: "Alfredo Prawn", price: 15 },
+        { name: "Spicy Buttermilk Prawn", price: 15 },
     ];
 
     /* { name: "Beef Mac & Cheese", price: 15 } */
