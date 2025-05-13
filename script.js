@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     const DELIVERY_FEE = 3;
-    let isDelivery = true; // Default to delivery
+    let isDelivery = false; // true- if want to sekalikan-- Default to delivery
 
     const orderBtn = document.getElementById("order-btn");
     const modal = document.getElementById("order-modal");
@@ -115,10 +115,11 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-        if (isDelivery) {
-            total += DELIVERY_FEE; // Add delivery charge if selected
-        }
-
+    
+       //No delivery fee since pickup only 
+     //   if (isDelivery) {
+     //       total += DELIVERY_FEE; // Add delivery charge if selected
+     //   } 
         totalPriceEl.textContent = total.toLocaleString() + " MYR";
     }
 
@@ -178,20 +179,20 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         menuContainer.innerHTML += `
-            <p>Choose Order Type:</p>
+          <!-- <p>Choose Order Type:</p>
             <label><input type="radio" name="order-type" value="Delivery" checked> Delivery (+${DELIVERY_FEE} MYR)</label>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
             <label><input type="radio" name="order-type" value="Pickup"> Pickup</label>
         `;
     
         // Attach event listener for order type selection
-        document.querySelectorAll('input[name="order-type"]').forEach(radio => {
-            radio.addEventListener("change", function () {
-                isDelivery = this.value === "Delivery";
-                updateTotalPrice();
-                updateOrderSummary();
-            });
-        });
+      //  document.querySelectorAll('input[name="order-type"]').forEach(radio => {
+        //    radio.addEventListener("change", function () {
+          //      isDelivery = this.value === "Delivery";
+            //    updateTotalPrice();
+              //  updateOrderSummary();
+         //   });
+      //  }); 
     }
 
 
@@ -263,7 +264,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const selectedOrderType = document.querySelector('input[name="order-type"]:checked').value;
-        orderText += `\nOrder Type: ${selectedOrderType}`;
+        orderText += `\nOrder Type: `\nOrder Type: Pickup`;
         orderText += `\nTotal: ${totalPriceEl.textContent}`;
 
         const whatsappURL = `https://wa.me/60139529463?text=${encodeURIComponent(orderText)}`;
