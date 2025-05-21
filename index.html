@@ -18,18 +18,18 @@
         <p>Delicious Pasta in a Box, Just for You!</p>
         <a href="https://www.instagram.com/pastakotak/" target="_blank">Follow Us on Instagram</a>
     </header>
-
-    <!-- New Menu -->
-<section id="seasonal-menu">
-    <h2 class="scroll-reveal visible">🤩🤩NEW MENUUU🤩🤩</h2>
-    <button onclick="showSeasonalMenu()">View New Menu</button>
-    <div id="seasonal-items" class="options-container" style="display: none;">
-        <div class="option-item">
-            <img src="spicybuttermilk.JPG" alt="spicybuttermilk">
-            <p>🍤Spicy Buttermilk Prawn - 15 MYR</p>
+    
+    <section id="seasonal-menu-popup" class="popup-overlay">
+        <div class="popup-content">
+          <h2>🤩 NEW MENUUU 🤩</h2>
+          <div class="option-item">
+            <img src="spicybuttermilk.JPG" alt="Spicy Buttermilk Prawn" />
+            <p>🍤 Spicy Buttermilk Prawn - 15 MYR</p>
+          </div>
+          <button id="closePopupBtn" class="popup-close-btn">Close</button>
         </div>
-    </div>
-</section> 
+      </section>
+      
     
     <section id="menu">
         <h2 class="scroll-reveal visible">Menu</h2>
@@ -37,7 +37,7 @@
         <!-- Aglio Olio -->
         <div class="menu-item">
             <h3>🍝 Aglio Olio</h3>
-            <p>Flavourful combination of garlic, olive oil, chili flakes, and fresh parsley.</p>
+            <p>Flavourful combination of garlic, olive oil, chili flakes, asnd fresh parsley.</p>
             <button onclick="showOptions('aglio-olio-options')">View Options</button>
             <div id="aglio-olio-options" class="options-container">
                 <div class="option-item">
@@ -53,13 +53,7 @@
                     <p>🍤 Prawn (3-4pcs) - 15 MYR</p>
                 </div>
     
-                <!-- Add-ons -->
-                <div class="addons">
-                    <h4>Add-ons:</h4>
-                    <p>🥚🍄‍🟫 Raw Egg Yolk/Shiitake Mushrooms - 2 MYR</p>
-                    <p>🍗🥩🍤 Chicken/Prawn/Beef - 3 MYR</p>
-                    <p>🧀🍝 Pasta/Parmesan/Cream - 2 MYR</p>
-                </div>
+                
             </div>
         </div>
     
@@ -81,29 +75,18 @@
                     <img src="alfredo-prawn.jpg" alt="Prawn Alfredo">
                     <p>🍤 Prawn - 15 MYR</p>
                 </div>
-    
-                <!-- Add-ons -->
-                <div class="addons">
-                    <h4>Add-ons:</h4>
-                    <p>🥚🍄‍🟫 Raw Egg Yolk/Shiitake Mushrooms - 2 MYR</p>
-                    <p>🍗🥩🍤 Chicken/Prawn/Beef - 3 MYR</p>
-                    <p>🧀🍝 Pasta/Parmesan/Cream - 2 MYR</p>
-                </div>
-            </div>
-        </div>
     </section>
 
-    <!-- Seasonal Menu for Ramadhan 
-<section id="seasonal-menu">
-    <h2 class="scroll-reveal visible">🌙 Seasonal Menu - Ramadhan</h2>
-    <button onclick="showSeasonalMenu()">View Seasonal Menu</button>
-    <div id="seasonal-items" class="options-container" style="display: none;">
-        <div class="option-item">
-            <img src="beef-mac-cheese.jpg" alt="Beef Mac and Cheese">
-            <p>🧀 Beef Mac & Cheese - 15 MYR</p>
+    <section>
+        <!-- Add-ons -->
+        <div class="addons">
+            <h4>Add-ons:</h4>
+            <p>🥚🍄‍🟫 Raw Egg Yolk/Shiitake Mushrooms - 2 MYR</p>
+            <p>🍗🥩🍤 Chicken/Prawn/Beef - 3 MYR</p>
+            <p>🧀🍝 Pasta/Parmesan/Cream - 2 MYR</p>
         </div>
-    </div>
-</section>  -->
+    </section>
+    
     
     <section id="order">
         <p>Place your order via WhatsApp!</p>
@@ -132,25 +115,6 @@
         Your browser does not support the audio element.
     </audio>
 <script>
-async function checkLocation() {
-    try {
-        const response = await fetch("https://ipapi.co/json/");
-        const data = await response.json();
-        const allowedCity = "Kemaman"; // Restrict to Kemaman only
-
-        if (data.city !== allowedCity) {
-            document.body.innerHTML = "<h1>Access Denied</h1><p>You are not allowed to view this page (Only People in Kemaman authorized to ACCESS).</p>";
-        }
-    } catch (error) {
-        console.error("Error fetching location data:", error);
-        document.body.innerHTML = "<h1>Access Denied</h1><p>Unable to verify location.</p> 
-            &nbsp
-            <p>(Only People in Kemaman authorized to ACCESS)</p>";
-    }
-}
-
-checkLocation();
-    
     // JavaScript for Background Music
     const audio = document.getElementById("background-music");
 
@@ -166,6 +130,7 @@ audio.play().catch(() => {
 document.body.addEventListener("click", function () {
     audio.play();
 }, { once: true });
+</script>
 </script>
 </body>
 </html>
