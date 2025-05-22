@@ -284,3 +284,22 @@ button:hover {
 .popup-close-btn:hover {
   background-color: #d32f2f;
 }
+
+#customer-note {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1em;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+#order-modal label[for="customer-note"] {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-align: left;
+}
