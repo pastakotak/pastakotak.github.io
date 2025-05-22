@@ -180,7 +180,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     message += `\nTotal: ${totalPriceEl.textContent}`;
 
-    const phoneNumber = "60123456789";  // Change to your WhatsApp number here!
+    document.getElementById("send-whatsapp").addEventListener("click", function () {
+  const note = document.getElementById("customer-note").value.trim(); // get note input
+  const orderSummary = document.getElementById("order-summary").innerText;
+  const totalPrice = document.getElementById("total-price").innerText;
+
+  let message = `🛒 *Your Order*\n${orderSummary}\n\n💰 *Total*: ${totalPrice} MYR`;
+
+  if (note) {
+    message += `\n\n📝 *Note*: ${note}`;
+  }
+    const phoneNumber = "60139529463";  // Change to your WhatsApp number here!
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   });
