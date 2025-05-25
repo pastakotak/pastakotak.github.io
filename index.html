@@ -39,15 +39,15 @@
             <button onclick="showOptions('aglio-olio-options')">View Options</button>
             <div id="aglio-olio-options" class="options-container">
                 <div class="option-item">
-                    <img src="aglio-olio-chicken.jpg" alt="Roasted Chicken Aglio Olio">
+                    <img src="aglio-olio-chicken.jpg" alt="Roasted Chicken Aglio Olio" onclick="openModal(this)">
                     <p>🍗 Roasted Chicken - 12 MYR</p>
                 </div>
                 <div class="option-item">
-                    <img src="alfredo-beef.jpg" alt="Beef Strips Aglio Olio">
+                    <img src="alfredo-beef.jpg" alt="Beef Strips Aglio Olio" onclick="openModal(this)">
                     <p>🥩 Beef Strips - 13 MYR</p>
                 </div>
                 <div class="option-item">
-                    <img src="aglio-olio-prawn.jpg" alt="Prawn Aglio Olio">
+                    <img src="aglio-olio-prawn.jpg" alt="Prawn Aglio Olio" onclick="openModal(this)">
                     <p>🍤 Prawn (3-4pcs) - 15 MYR</p>
                 </div>
     
@@ -62,19 +62,25 @@
             <button onclick="showOptions('alfredo-options')">View Options</button>
             <div id="alfredo-options" class="options-container">
                 <div class="option-item">
-                    <img src="aglio-olio-chicken.jpg" alt="Roasted Chicken Alfredo">
+                    <img src="aglio-olio-chicken.jpg" alt="Roasted Chicken Alfredo" onclick="openModal(this)">
                     <p>🍗 Roasted Chicken - 13 MYR</p>
                 </div>
                 <div class="option-item">
-                    <img src="alfredo-beef.jpg" alt="Beef Strips Alfredo">
+                    <img src="alfredo-beef.jpg" alt="Beef Strips Alfredo" onclick="openModal(this)">
                     <p>🥩 Beef Strips - 14 MYR</p>
                 </div>
                 <div class="option-item">
-                    <img src="alfredo-prawn.jpg" alt="Prawn Alfredo">
+                    <img src="alfredo-prawn.jpg" alt="Prawn Alfredo" onclick="openModal(this)">
                     <p>🍤 Prawn - 15 MYR</p>
                 </div>
     </section>
 
+    <!--Modal-->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div id="caption"></div>
+    </div>
     <section>
         <!-- Add-ons -->
         <div class="addons">
@@ -132,6 +138,20 @@ audio.play().catch(() => {
 document.body.addEventListener("click", function () {
     audio.play();
 }, { once: true });
+
+function openModal(imgElement) {
+    var modal = document.getElementById("imageModal");
+    var modalImg = document.getElementById("modalImg");
+    var caption = document.getElementById("caption");
+
+    modal.style.display = "block";
+    modalImg.src = imgElement.src;
+    caption.innerHTML = imgElement.alt;
+}
+
+function closeModal() {
+    document.getElementById("imageModal").style.display = "none";
+}
 </script>
 </script>
 </body>

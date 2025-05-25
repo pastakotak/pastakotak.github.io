@@ -167,6 +167,8 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    const chefNote = document.getElementById("customer-note").value.trim();
+
     let message = "Hi! I'd like to place a pickup order:\n\nOrder Details:\n";
     Object.keys(orderData).forEach(key => {
       const item = orderData[key];
@@ -178,6 +180,11 @@ document.addEventListener("DOMContentLoaded", function () {
         message += `- ${key} x${item.quantity}${addOnsText ? ` (${addOnsText})` : ""}\n`;
       }
     });
+
+    if (chefNote) {
+      message += `\nNote for the chef: ${chefNote}`;
+    }
+    
     message += `\nTotal: ${totalPriceEl.textContent}`;
     
     const phoneNumber = "60139529463";  // Change to your WhatsApp number here!
