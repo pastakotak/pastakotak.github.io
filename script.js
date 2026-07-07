@@ -6,7 +6,7 @@ function showOptions(id) {
 
 document.addEventListener("DOMContentLoaded", function () {
   const menuItems = [
-    { name: "Spicy ButterMilk Prawn", price: 15 },
+    { name: "Spicy ButterMilk Prawn", price: 18 },
     { name: "Aglio Olio Roasted Chicken", price: 12 },
     { name: "Aglio Olio Beef Strips", price: 13 },
     { name: "Aglio Olio Prawn", price: 15 },
